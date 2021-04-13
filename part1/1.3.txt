@@ -1,0 +1,14 @@
+First, pull the image:
+  % docker image pull devopsdockeruh/simple-web-service:ubuntu
+
+Then, start a container:
+  % docker run -d -it --name secret-message devopsdockeruh/simple-web-service:ubuntu
+
+To access the filesystem within the container:
+  % docker exec -it secret-message bash
+
+Inside the container, read the log:
+  root@e0d4d6b591d9:/usr/src/app# tail /usr/src/app/text.log
+
+which outputs, among timestamps, the secret message:
+  Secret message is: 'You can find the source code here: https://github.com/docker-hy'
