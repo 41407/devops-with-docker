@@ -1,0 +1,7 @@
+To run the backend:
+
+% docker run -d -p 8080:8080 example-backend
+
+To run the frontend, I had to use port mapping from host port 666 to 5000, since the latter was already being used by some other application.
+
+% docker run -d -p 666:5000 example-frontend
