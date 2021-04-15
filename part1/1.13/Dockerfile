@@ -1,0 +1,9 @@
+FROM golang:alpine
+EXPOSE 8080
+WORKDIR /usr/src/app
+COPY . .
+RUN apk add build-base
+RUN go test ./...
+RUN go build
+ENV REQUEST_ORIGIN "https://example.com"
+ENTRYPOINT ./server
